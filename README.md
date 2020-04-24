@@ -11,6 +11,7 @@
 - icon tooltip
 - animations
 - automated test
+- responsive
 
 **Stack**
 

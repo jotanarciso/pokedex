@@ -52,7 +52,7 @@ $(document).ready(function () {
   });
 
   testButton.addEventListener("click", function () {
-    testPokemons();
+    testPokemons(true);
   });
 
   searchBox.addEventListener("keypress", function (e) {
@@ -67,6 +67,9 @@ $(document).ready(function () {
       pokemon = searchBox.value.toLowerCase();
       searchBox.value = "";
     } else {
+      // if test use param
+      $("#test-button").attr("disabled", true);
+      testButton.innerHTML = "Waiting finish...";
       pokemon = pokemonTest;
       searchBox.value = pokemonTest;
     }
@@ -148,12 +151,17 @@ $(document).ready(function () {
   }
   /* end operation  */
 
-  async function testPokemons() {
-    checkAllPokemons();
+  async function testPokemons(test) {
+    if (test) {
+      checkAllPokemons();
+    } else {
+      stopTest();
+    }
+
     const testTime = 1000; // time (seconds) between test requests
+    const qtd = 20; // amount of pokemon to test
     var index = 0;
     var time = setInterval(checkAllPokemons, testTime);
-    const qtd = 20; // amount of pokémon to test
     async function checkAllPokemons() {
       const pokemons = await fetch(
         `https://pokeapi.co/api/v2/pokemon/?limit=${qtd}`
@@ -162,11 +170,13 @@ $(document).ready(function () {
         findPokemon((test = true), response.results[index].name);
         index++;
         if (index === response.results.length) {
-          abortTimer();
+          stopTest();
+          testButton.innerHTML = "Test finished!";
         }
       });
     }
-    function abortTimer() {
+
+    function stopTest() {
       clearInterval(time);
     }
   }

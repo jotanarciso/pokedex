@@ -14,10 +14,6 @@ input.form-control {
   border-radius: 15px;
 }
 
-.input-group {
-  top: 50%;
-}
-
 #scene {
   min-height: 100vh;
   background: linear-gradient(#ac6ebb8f, #a71f3275);
@@ -289,7 +285,8 @@ input.form-control {
 /* Loading */
 
 #bg-loading {
-  z-index: 99;
+  display: flex;
+  z-index: 98;
   position: absolute;
   height: 100vh;
   width: 100%;
@@ -298,9 +295,6 @@ input.form-control {
 
 #pokeball {
   z-index: 99;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 66px;
   height: 66px;
   border-radius: 50%;
@@ -676,9 +670,9 @@ input.form-control {
   }
 }
 .footer-copyright {
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  right: 15px;
+  right: 0;
 }
 .footer-copyright a {
   color: #212529;

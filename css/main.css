@@ -391,10 +391,10 @@ input.form-control {
       linear,
       left top,
       right top,
-      color-stop(50%, #24a2f7),
+      color-stop(50%, #8775ca),
       color-stop(50%, #fefefe)
     );
-    background: linear-gradient(90deg, #24a2f7 50%, #fefefe 50%);
+    background: linear-gradient(90deg, #8775ca 50%, #fefefe 50%);
   }
   50%,
   74% {
@@ -437,10 +437,10 @@ input.form-control {
       linear,
       left top,
       right top,
-      color-stop(50%, #24a2f7),
+      color-stop(50%, #8775ca),
       color-stop(50%, #fefefe)
     );
-    background: linear-gradient(90deg, #24a2f7 50%, #fefefe 50%);
+    background: linear-gradient(90deg, #8775ca 50%, #fefefe 50%);
   }
   50%,
   74% {

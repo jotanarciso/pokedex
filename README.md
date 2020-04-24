@@ -8,6 +8,7 @@
 
 - integration API
 - search engine
+- icon tooltip
 - animations
 - automated test
 

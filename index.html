@@ -15,62 +15,125 @@
     />
     <!-- main style -->
     <link rel="stylesheet" href="./css/main.min.css" />
-    <!-- js -->
+    <link rel="stylesheet" href="https://use.typekit.net/vvk4iow.css" />
+    <!-- my adobe stock fonts -->
+    <!-- boot js -->
     <script
       data-main="./js/config/boot.min.js"
       src="./js/vendor/require.min.js"
     ></script>
-    <!-- boot js -->
   </head>
+
   <body>
+    <!-- start loading -->
     <div id="bg-loading"></div>
     <div id="pokeball"></div>
+    <!-- end loading -->
+
+    <!-- start scene -->
     <div
       class="col d-flex align-items-center justify-content-center"
       id="scene"
     >
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="card">
-            <div class="id">
-              #123
+        <div class="row">
+          <div class="col">
+            <!-- start card -->
+            <div class="card">
+              <div class="id" id="pokemon-id">
+                #01
+              </div>
+              <div class="type" id="pokemon-type">
+                <img src="./img//icons//jota.png" />
+              </div>
+              <div class="d-flex justify-content-center sprite">
+                <img id="pokemon-img" src="./img/defaultPokemon.jpg" />
+                <div class="overlay"></div>
+              </div>
+              <div class="info">
+                <h1 class="text-center font-weight-bold" id="pokemon-name">
+                  João Narciso
+                </h1>
+                <div class="text-center mt-4">
+                  <span id="pokemon-xp" class="font-weight-bold"
+                    >
+                    <span class="text-danger"> </span>
+                      Maximum call stack size exceeded error
+                  </span>
+                  <span class="ml-1">experience</span>
+                </div>
+                <div class="text-center d-flex justify-content-center mt-1">
+                  <p id="pokemon-height" class="mr-1">175cm</p>
+                  <span class="mr-2">height</span>
+                  <p id="pokemon-weight" class="mlr-1">68</p>
+                  <span class="ml-1">weight</span>
+                </div>
+                <p class="font-weight-bold mt-3 mb-1 text-center">Abilities</p>
+                <div
+                  id="pokemon-abilities"
+                  class="text-center d-flex justify-content-center"
+                >
+                  <p class="tag">html</p>
+                  <p class="tag">css</p>
+                  <p class="tag">javascript</p>
+                  <p class="tag">ux</p>
+                </div>
+                <p class="font-weight-bold mt-3 mb-1 text-center">Forms</p>
+                <div
+                  id="pokemon-forms"
+                  class="text-center d-flex justify-content-center"
+                >
+                  <p class="tag">designer</p>
+                  <p class="tag">front-end</p>
+                  <p class="tag">back-end</p>
+                </div>
+              </div>
             </div>
-            <div class="type">
-              <img src="https://image.flaticon.com/icons/svg/426/426833.svg" />
-            </div>
-            <div class="d-flex justify-content-center sprite">
-              <img
-                src="https://www.ourteennetwork.com/image.php?width=450&height=450&cropratio=1:1&image=https://www.ourteennetwork.com/imagenes/82108516.jpg"
+            <style class="hover"></style>
+            <!-- end card -->
+          </div>
+          <!-- start search -->
+          <div class="col-8">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="search-box"
+                placeholder="Find Pokemon"
               />
-              <div class="overlay"></div>
-            </div>
-            <div class="info">
-              <h1 class="text-center font-weight-bold">Charmander</h1>
-              <div class="text-center mt-4">
-                <span class="mr-1">Região de </span
-                ><span class="font-weight-bold">Kanto</span>
-              </div>
-              <div class="text-center d-flex justify-content-center mt-1">
-                <p class="mr-2">170cm</p>
-                <p class="ml-2">200kg</p>
-              </div>
-              <p class="font-weight-bold mt-3 mb-1 text-center">Abilities</p>
-              <div class="text-center d-flex justify-content-center">
-                <p class="tag">Teste 1</p>
-                <p class="tag">Teste 2</p>
-                <p class="tag">Teste 3</p>
-              </div>
-              <p class="font-weight-bold mt-3 mb-1 text-center">Forms</p>
-              <div class="text-center d-flex justify-content-center">
-                <p class="tag">Teste 1</p>
-                <p class="tag">Teste 2</p>
-                <p class="tag">Teste 3</p>
+              <div class="input-group-append">
+                <button
+                  class="btn btn-pokemon"
+                  id="search-button"
+                  type="button"
+                >
+                  <span>GO!</span>
+                </button>
               </div>
             </div>
           </div>
-          <style class="hover"></style>
+          <div class="test">
+            <button class="btn btn-test" id="test-button" type="button">
+              <span>Let's test!</span>
+            </button>
+          </div>
+
+          <!-- end search -->
         </div>
       </div>
+      <!-- start credits -->
+      <div class="footer-copyright text-right py-3">
+        <a
+          href="https://jotanarciso.com/"
+          target="blank"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="jotanarciso.com | desenvolvedor de experiências"
+          >;</a
+        >
+      </div>
+      <!-- end credits -->
     </div>
+    <!-- end scene -->
   </body>
 </html>

@@ -6,16 +6,34 @@ body {
   background-size: cover;
 }
 
+input.form-control {
+  height: 70px;
+  top: 50%;
+  font-size: 1em;
+  border: 5px solid #9858ad;
+  border-radius: 15px;
+}
+
+.input-group {
+  top: 50%;
+}
+
 #scene {
   min-height: 100vh;
   background: linear-gradient(#ac6ebb8f, #a71f3275);
 }
+.btn-pokemon {
+  background: #9858ad;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 0px 5px 5px 0px;
+}
 
 /* Card  */
-
 .card {
-  height: 560px;
-  width: 340px;
+  height: 500px;
+  width: 300px;
   position: relative;
   margin: 0 auto;
   background-image: url(../img/background.jpg);
@@ -25,7 +43,7 @@ body {
   background-color: #211799;
   background-size: cover;
   border: 2px solid #00000063;
-  border-radius: 35px;
+  border-radius: 15px;
   padding: 15px;
   box-shadow: 3px 7px 3px 3px #00000026;
 }
@@ -40,6 +58,7 @@ body {
 }
 
 .card .type {
+  display: flex;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -47,12 +66,22 @@ body {
   margin: 5px;
 }
 
+.card .type a {
+  z-index: 99999;
+}
+
+.card .type img {
+  display: flex;
+  margin: 2px;
+  max-height: 20px;
+}
+
 .card .tag {
   background: #25242594;
-  padding: 8px;
+  padding: 5px;
   border-radius: 10px;
-  margin: 5px;
-  font-size: 12px;
+  margin: 3px;
+  font-size: 11px;
 }
 
 .card .forms {
@@ -72,6 +101,7 @@ body {
 }
 
 .card .sprite img {
+  background: url("https://i.pinimg.com/originals/ca/e0/1a/cae01ab5cce960db0d7819cc96e97ce8.png");
   top: 0;
   z-index: 1;
   position: absolute;
@@ -84,31 +114,27 @@ body {
 }
 
 .card .sprite .overlay {
-  background: linear-gradient(
-    90deg,
-    rgb(255, 255, 255) 0%,
-    rgb(173, 173, 173) 54%,
-    rgb(0, 0, 0) 100%
-  );
+  background: linear-gradient(90deg, #fff 0, #6898b9 54%, #ce0079 100%);
   opacity: 0.1;
   z-index: 2;
-  left: 75px;
   border-radius: 100px;
   height: 150px;
   width: 150px;
-  border-radius: 100px;
+  left: 75px;
+  margin: -15px;
 }
 
 .card .info {
-  height: 200px;
+  height: 300px;
   width: 100%;
-  margin: -10px auto;
-  padding: 20px;
+  margin: -5px auto;
+  padding: 0;
   border-radius: 15px;
-  color: white;
+  color: #fff;
 }
 
 .card .info h1 {
+  font-size: 2em;
   text-shadow: 3px 3px 3px #be2559;
 }
 .card:before,
@@ -119,7 +145,7 @@ body {
   right: 0;
   bottom: 0;
   top: 0;
-  border-radius: 35px;
+  border-radius: 15px;
   background-image: linear-gradient(
     115deg,
     transparent 0%,
@@ -238,11 +264,31 @@ body {
   }
 }
 
+/* Test */
+.test {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.btn.btn-test {
+  color: white;
+  background: #9e659d;
+  opacity: 0.6;
+  border-radius: 10px;
+}
+
+.btn.btn.btn-test:hover {
+  color: white;
+  background: #9e659d;
+  opacity: 1;
+  border-radius: 5px;
+}
 
 /* Loading */
 
 #bg-loading {
-
   z-index: 99;
   position: absolute;
   height: 100vh;
@@ -250,7 +296,7 @@ body {
   background-color: #000;
 }
 
-#pokeball { 
+#pokeball {
   z-index: 99;
   position: absolute;
   top: 50%;
@@ -628,4 +674,31 @@ body {
     -webkit-animation-timing-function: cubic-bezier(0.15, 0, 1, 1);
     animation-timing-function: cubic-bezier(0.15, 0, 1, 1);
   }
+}
+.footer-copyright {
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+}
+.footer-copyright a {
+  color: #212529;
+  font-family: boucherie-block, sans-serif;
+  font-style: normal;
+  font-size: 2.8em;
+  margin: 0 30px 0 3px;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  -ms-transition: all 0.4s ease-in-out 0;
+  -o-transition: all 0.4s ease-in-out 0;
+}
+
+.footer-copyright a:hover {
+  color: #fff;
+  font-family: boucherie-block, sans-serif;
+  font-style: bold;
+}
+
+.footer-copyright span {
+  font-size: 0.8em;
 }

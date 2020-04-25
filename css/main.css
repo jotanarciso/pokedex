@@ -266,7 +266,7 @@ input.form-control {
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 9999999;
+  z-index: 9999998;
 }
 
 .btn.btn-test {
@@ -287,7 +287,7 @@ input.form-control {
 
 #bg-loading {
   display: flex;
-  z-index: 98;
+  z-index: 9999999;
   position: absolute;
   height: 100vh;
   width: 100%;

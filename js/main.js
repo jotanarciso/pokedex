@@ -152,28 +152,31 @@ $(document).ready(function () {
   /* end operation  */
 
   async function testPokemons(test) {
-    if (test) {
-      checkAllPokemons();
-    } else {
-      stopTest();
-    }
-
     const testTime = 1000; // time (seconds) between test requests
     const qtd = 20; // amount of pokemon to test
+    var pokemonsTested = [];
     var index = 0;
     var time = setInterval(checkAllPokemons, testTime);
-    async function checkAllPokemons() {
+
+    if (test) {
       const pokemons = await fetch(
         `https://pokeapi.co/api/v2/pokemon/?limit=${qtd}`
       );
       await pokemons.json().then((response) => {
-        findPokemon((test = true), response.results[index].name);
-        index++;
-        if (index === response.results.length) {
-          stopTest();
-          testButton.innerHTML = "Test finished!";
-        }
+        pokemonsTested = response.results;
+        checkAllPokemons();
       });
+    } else {
+      stopTest();
+    }
+
+    async function checkAllPokemons() {
+      findPokemon((test = true), pokemonsTested[index].name);
+      index++;
+      if (index === pokemonsTested.length) {
+        stopTest();
+        testButton.innerHTML = "Test finished!";
+      }
     }
 
     function stopTest() {
